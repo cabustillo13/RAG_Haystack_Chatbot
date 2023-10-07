@@ -21,7 +21,7 @@
   </p>
 </p>
 
-## Configuración
+## ⚙️ Configuración
 
 Instala poetry.
 ```
@@ -36,23 +36,23 @@ poetry install
 Nota: Esto solo funcionará si estas dentro del directorio del repositorio.
 
 
-## Tema de tu proyecto
+## 📍 Tema de tu proyecto
 
 Pipeline de Generación Aumentada por Recuperación (RAG) para chatbot.
 
-## Descripción 
+## 👀 Descripción 
 
 Proporcione una descripción de su proyecto. Incluya las fuentes de datos que está utilizando, las herramientas que está utilizando y el resultado esperado de su proyecto.
 
-## Fuentes de datos
+## 📺 Fuentes de datos
 
 Vamos a analizar el dataset de Kaggle: [Netflix Movies and TV Shows](https://www.kaggle.com/datasets/shivamb/netflix-shows).
 
-## Métodos
+## 🔎 Métodos
 
 Describa los métodos que está utilizando. Incluya una descripción de las herramientas que está utilizando.
 
-## Interfaz de usuario que tendrá su proyecto
+## 🌟 Interfaz de usuario que tendrá su proyecto
 
 Describa la interfaz de usuario que tendrá su proyecto. Incluya una descripción de las herramientas que está utilizando.
 
@@ -62,7 +62,7 @@ Opciones:
 2. Aplicación Chainlit
 3. Tablero Voila
 
-## Miembros del equipo
+## 😎 Miembro del equipo
 
 - Linkedin: [Carlos Bustillo](https://www.linkedin.com/in/carlos-bustillo/)
 - Github: [cabustillo13](https://github.com/cabustillo13)
