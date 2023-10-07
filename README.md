@@ -2,8 +2,18 @@
 
 ## Configuración
 
+Instala poetry.
+```
+pip install poetry
+```
 
-**[Documento de configuración](setup-espanol.md).**
+Instala los paquetes requeridos utilizando el siguiente comando:
+```
+poetry install
+```
+
+Nota: Esto solo funcionará si estas dentro del directorio del repositorio.
+
 
 ## Tema de tu proyecto
 
@@ -19,7 +29,7 @@ Agregue una descripción detallada de sus fuentes de datos. Asegúrese de trabaj
 
 **Do not upload data to GitHub** / **No suba datos a GitHub**
 
-## Methods / Métodos
+## Métodos
 
 Describa los métodos que está utilizando. Incluya una descripción de las herramientas que está utilizando.
 
