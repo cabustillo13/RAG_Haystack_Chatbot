@@ -4,19 +4,23 @@ upstream = None
 
 
 # +
-import requests 
 import pandas as pd
-import json
 import duckdb
+import kaggle
 
 # +
-def extract_data(url):
-    """Extract data from URL and return a dataframe"""
-    response = requests.get(url)
-    if response.status_code == 200:
-        return pd.DataFrame(json.loads(response.content))
-    else:
-        raise Exception(f"Error retrieving data from {url}")
+def extract_data(kaggle_dataset_id):
+    """Extract data from Kaggle ID dataset and return a dataframe"""
+    
+    try:
+        # Connect to Kaggle to download the database
+        kaggle.api.authenticate()
+        kaggle.api.dataset_download_files(kaggle_dataset_id, path='./', unzip=True)
+        # Convert it into a dataframe
+        df = pd.read_csv("netflix_titles.csv")
+        return df
+    except:
+        raise Exception(f"Error retrieving data from {kaggle_dataset_id}")
 
 # +
 # write a function that saves a dataframe to duckdb
@@ -28,14 +32,14 @@ def save_to_duckdb(df, table_name, db_path):
     conn.close()
 
 # +
+
 if __name__ == "__main__":
 
-    # Extract data from URL
-    url = "https://data.cityofnewyork.us/resource/erm2-nwe9.json"
-    df = extract_data(url)
+    # Extract data from Kaggle ID dataset: https://www.kaggle.com/datasets/shivamb/netflix-shows
+    kaggle_dataset_id = "shivamb/netflix-shows"
+    df = extract_data(kaggle_dataset_id)
     
     # Save to duckdb
     db_path = "data.duckdb"
-    table_name = "nycitydata"
+    table_name = "netflix_shows"
     save_to_duckdb(df, table_name, db_path)
-
