@@ -1,7 +1,7 @@
 # Hacktoberfest 2023
 
 <p align="center">
- <img width="100px" src="https://github.com/cabustillo13/RAG_Haystack_Chatbot/tree/main/images/chatbot.svg.svg" align="center" alt="RAG_Haystack_Chatbot" />
+ <img width="100px" src="https://github.com/cabustillo13/RAG_Haystack_Chatbot/blob/main/images/chatbot.svg" align="center" alt="RAG_Haystack_Chatbot" />
  <h2 align="center">Hacktoberfest 2023 Project</h2>
  <p align="center"><b>Building ETL and RAG pipelines with open source .</b></p>
 
