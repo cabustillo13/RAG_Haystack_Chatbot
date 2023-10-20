@@ -2,7 +2,7 @@
 name = "hacktoberfest-2023-project"
 version = "0.1.0"
 description = "ETL/RAG pipelines with Ploomber"
-authors = ["Carlos Bustillo cabustillo13@hotmail.com"]
+authors = ["Carlos Bustillo <cabustillo13@hotmail.com>", "Monica Regina da Silva <monicareginadasilva@gmail.com"]
 license = "Apache 2.0"
 readme = "README.md"
 
