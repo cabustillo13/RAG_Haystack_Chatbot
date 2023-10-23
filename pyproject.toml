@@ -20,6 +20,7 @@ ipywidgets = "^8.1.1"
 chainlit = "^0.7.0"
 pandas = "2.0.3"
 kaggle = "^1.5.16"
+torch = ">=2.0.0, !=2.0.1, !=2.1.0"
 
 
 [build-system]

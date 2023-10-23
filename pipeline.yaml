@@ -1,5 +1,0 @@
-tasks:
-  - source: src/etl/extract.py
-    product:
-      nb: src/products/extract-pipeline.ipynb
-      data: data.duckdb

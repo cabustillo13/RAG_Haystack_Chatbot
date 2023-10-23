@@ -4,13 +4,23 @@ FROM python:3.10
 # Set the working directory
 WORKDIR /app
 
-# Create a new user and switch to this user
+# Create a new user 
 RUN useradd -m -u 1000 user
-USER user
 
 # Set environment variables for the new user
 ENV HOME=/home/user \
     PATH=/home/user/.local/bin:$PATH
+
+# Copy and set the kaggle.json file
+COPY kaggle.json $HOME/.kaggle/kaggle.json
+RUN chown user:user $HOME/.kaggle/kaggle.json
+RUN chmod 600 $HOME/.kaggle/kaggle.json 
+
+# Switch to new user
+USER user
+
+# Copy the .env file
+COPY .env .env
 
 # Set the working directory for the user
 WORKDIR $HOME/app
@@ -32,17 +42,9 @@ ENV POETRY_VIRTUALENVS_IN_PROJECT=true
 RUN poetry lock
 RUN poetry install
 
-# Copy the .env file
-COPY .env .env
-
 # Copy the rest of the application code
 COPY . .
 
-# Extract data for app
-RUN poetry run ploomber build
-
-# Expose the port that the app runs on
-EXPOSE 8000
-
 # Define the command to run the app
-CMD ["poetry", "run", "chainlit", "run", "app.py", "--port", "7860"]
+CMD ["poetry", "run", "chainlit", "run", "src/app/app.py", "--host=0.0.0.0", "--port=80", "--headless"]
+#ENTRYPOINT ["chainlit", "run", "app.py", ]
