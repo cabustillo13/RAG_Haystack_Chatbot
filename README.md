@@ -3,7 +3,7 @@
 <p align="center">
  <img width="100px" src="https://github.com/cabustillo13/RAG_Haystack_Chatbot/blob/main/images/chatbot.svg" align="center" alt="RAG_Haystack_Chatbot" />
  <h2 align="center">Hacktoberfest 2023 Project</h2>
- <p align="center"><b>Building ETL and RAG pipelines with open source .</b></p>
+ <p align="center"><b>Haystack RAG pipeline for a chatbot.</b></p>
 
 </p>
   <p align="center">
@@ -21,48 +21,26 @@
   </p>
 </p>
 
-## ⚙️ Configuración
-
-Instala poetry.
+## ⚙️ Set up
+Install poetry.
 ```
 pip install poetry
 ```
 
-Instala los paquetes requeridos utilizando el siguiente comando:
+Install required packages using the following command:
 ```
 poetry install
 ```
 
-Nota: Esto solo funcionará si estas dentro del directorio del repositorio.
+## 📍 Haystack RAG pipeline for a chatbot
 
+We're building a Haystack RAG pipeline for a chatbot that answers questions about music lyrics.
 
-## 📍 Tema de tu proyecto
+For this project, we're using a subset of this Kaggle Dataset: [Song Lyrics](https://www.kaggle.com/datasets/deepshah16/song-lyrics-dataset).
 
-Pipeline de Generación Aumentada por Recuperación (RAG) para chatbot.
+We're using Haystack for Document Store and build the RAG pipeline and Open AI gpt3.5-turbo LLM to build a chatbot with Chainlit for song lyrics.
 
-## 👀 Descripción 
+## 😎 Team members
 
-Proporcione una descripción de su proyecto. Incluya las fuentes de datos que está utilizando, las herramientas que está utilizando y el resultado esperado de su proyecto.
-
-## 📺 Fuentes de datos
-
-Vamos a analizar el dataset de Kaggle: [Netflix Movies and TV Shows](https://www.kaggle.com/datasets/shivamb/netflix-shows).
-
-## 🔎 Métodos
-
-Describa los métodos que está utilizando. Incluya una descripción de las herramientas que está utilizando.
-
-## 🌟 Interfaz de usuario que tendrá su proyecto
-
-Describa la interfaz de usuario que tendrá su proyecto. Incluya una descripción de las herramientas que está utilizando.
-
-Opciones:
-
-1. Aplicación FastAPI
-2. Aplicación Chainlit
-3. Tablero Voila
-
-## 😎 Miembro del equipo
-
-- Linkedin: [Carlos Bustillo](https://www.linkedin.com/in/carlos-bustillo/)
-- Github: [cabustillo13](https://github.com/cabustillo13)
+- Linkedin: [Monica Regina da Silva](https://www.linkedin.com/in/monicasil/), [Carlos Bustillo](https://www.linkedin.com/in/carlos-bustillo/)
+- Github: [MonicaRSilva](https://github.com/MonicaRSilva),[cabustillo13](https://github.com/cabustillo13)

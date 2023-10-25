@@ -22,10 +22,12 @@ kaggle.api.authenticate()
 kaggle.api.dataset_download_files(kaggle_dataset_id, path='../', unzip=True)
 
 # We chose two artists for starters
-df_bts = pd.read_csv("../csv/BTS.csv")
+#df_bts = pd.read_csv("../csv/BTS.csv") #Removed since we couldn't make the model read Korean
 df_lady_gaga = pd.read_csv("../csv/LadyGaga.csv")
+df_cold_play = pd.read_csv("../csv/ColdPlay.csv")
+df_katy_perry= pd.read_csv("../csv/KatyPerry.csv")
 
-df_lyrics = pd.concat([df_bts, df_lady_gaga], axis=0)
+df_lyrics = pd.concat([df_lady_gaga, df_cold_play, df_katy_perry], axis=0)
 
 # Renaming first column to id and generating the correct numbers
 col_names = df_lyrics.columns.to_list()
@@ -43,9 +45,9 @@ document_store.write_documents(df_lyrics.to_dict('records'))
 
 
 rag_prompt = PromptTemplate(
-    prompt="""Synthesize a brief answer from the following text for the given question.
+    prompt="""Synthesize a brief answer from the following music lyrics for the given question. 
             Provide a clear and concise response related to music lyrics and the artists provided.
-            Your answer should be in your own words and be no longer than 50 words.
+            Your answer should be in your own words and be no longer than 80 words and make sure to mention the artist and the song name whenever you can.
             \n\n Music Lyrics: {join(documents)} \n\n Question: {query} \n\n Answer:""",
     output_parser=AnswerParser(),
 )
