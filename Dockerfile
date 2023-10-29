@@ -12,9 +12,7 @@ ENV HOME=/home/user \
     PATH=/home/user/.local/bin:$PATH
 
 # Copy and set the kaggle.json file
-COPY kaggle.json $HOME/.kaggle/kaggle.json
-RUN chown user:user $HOME/.kaggle/kaggle.json
-RUN chmod 600 $HOME/.kaggle/kaggle.json 
+COPY --chown=user:user --chmod=600 kaggle.json $HOME/.kaggle/kaggle.json
 
 # Switch to new user
 USER user
@@ -28,23 +26,17 @@ WORKDIR $HOME/app
 # Copy the current directory contents into the container at /app
 COPY --chown=user . $HOME/app
 
-# Copy the poetry files
-COPY pyproject.toml poetry.lock /app/
+# Copy the requirements file
+COPY --chown=user:user requirements.txt $HOME/app/
 
-# Upgrade pip and install poetry
+# Upgrade pip
 RUN pip install --upgrade pip
-RUN pip install poetry
-
-# Set environment variable to create a virtual environment within the project directory
-ENV POETRY_VIRTUALENVS_IN_PROJECT=true
 
 # Install project dependencies
-RUN poetry lock
-RUN poetry install
+RUN pip install -r requirements.txt
 
 # Copy the rest of the application code
-COPY . .
+COPY --chown=user:user .env kaggle.json README.md chainlit.md .chainlit/ /src/app/ $HOME/app/
 
 # Define the command to run the app
-CMD ["poetry", "run", "chainlit", "run", "src/app/app.py", "--host=0.0.0.0", "--port=80", "--headless"]
-#ENTRYPOINT ["chainlit", "run", "app.py", ]
+CMD ["chainlit", "run", "src/app/app.py", "--host=0.0.0.0", "--port=80", "--headless"]

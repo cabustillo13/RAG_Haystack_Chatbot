@@ -1,0 +1,15 @@
+chainlit==0.7.301
+farm-haystack[inference]==1.20.1
+duckdb==0.8.1
+kaggle==1.5.16
+pandas==2.0.3
+python-dotenv==1.0.0
+torch==2.0.0
+openai==0.28.0
+ploomber==0.23.0
+jupysql==0.10.1
+jupysql-plugin==0.2.2
+duckdb-engine==0.9.2
+ipykernel==6.25.2
+python-dotenv==1.0.0
+ipywidgets==8.1.1

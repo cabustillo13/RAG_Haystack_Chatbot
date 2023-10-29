@@ -12,6 +12,8 @@ import chainlit as cl
 load_dotenv("../.env")
 load_dotenv()
 MY_API_KEY = os.getenv("OPENAI_API_KEY")
+if not MY_API_KEY:
+    raise ValueError("Please set the OPENAI_API_KEY environment variable")
 
 # Initializing document store, use_bm25 when we can't use GPU
 document_store = InMemoryDocumentStore(use_bm25=True)
@@ -65,9 +67,9 @@ pipe.add_node(component=retriever, name="retriever", inputs=["Query"])
 pipe.add_node(component=pn, name="prompt_node", inputs=["retriever"])
 
 @cl.on_message
-async def main(message: str):
+async def main(message: cl.Message):
     # Use the pipeline to get a response
-    output = pipe.run(query=message)
+    output = pipe.run(query=message.content)
 
     # Create a Chainlit message with the response
     response = output['answers'][0].answer
