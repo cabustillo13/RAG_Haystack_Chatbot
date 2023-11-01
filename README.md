@@ -40,6 +40,12 @@ For this project, we're using a subset of this Kaggle Dataset: [Song Lyrics](htt
 
 We're using Haystack for Document Store and build the RAG pipeline and Open AI GPT3.5-turbo LLM to build a chatbot with Chainlit for song lyrics.
 
+## 🎥 Youtube Video Presentation
+
+Check our video presentation: [Haystack RAG pipeline for a music lyrics chatbot - Hacktoberfest 2023 by Ploomber](https://www.youtube.com/watch?v=Cj_AVa8kpE0)
+
+![Youtube Screenshot](docs/youtube_screenshot.PNG)
+
 ## 🙌 Haystack Pipeline
 
 ![Pipeline Process](docs/Pipeline_Process_Presentation.jpg)
